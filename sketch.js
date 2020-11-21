@@ -6,7 +6,7 @@ const Body = Matter.Body;
 
 function preload()
 {
-	
+dustbinImage = loadImage("dustbin.png")	
 }
 
 function setup() {
@@ -29,25 +29,14 @@ function setup() {
 
 function draw() {
   rectMode(CENTER);
-  background(0);
+  background(255);
   paper.display();
   ground.display();
   drawSprites();
-  left = createSprite(330,620,20,100);
-left.shapeColor="red"
+ 
+image(dustbinImage, 550, 360)
 
 
-right = createSprite(480,620,20,100);
-right.shapeColor="red"
-bottom = createSprite(405,660,150,20);
-bottom.shapeColor="red"
-
-leftbody = Bodies.rectangle(330,620,20,100);
-World.add(world,leftbody );
-rightbody = Bodies.rectangle(480,620,20,100);
-World.add(world,rightbody );
-bottombody = Bodies.rectangle(405,660,150,30);
-World.add(world,bottombody);
 }
  
 
@@ -55,5 +44,5 @@ World.add(world,bottombody);
 
   function keyPressed(){
 	if(keyCode == UP_ARROW){
-	  Matter.Body.applyForce(paper.body,paper.body.position,{x:45,y:-45})
+	  Matter.Body.applyForce(paper.body,paper.body.position,{x:85,y:-45})
 	}}
